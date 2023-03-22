@@ -17,11 +17,17 @@ class Bouton(QtWidgets.QWidget):
     @QtCore.Slot()
     def magic(self):
         parent = QtCore.QObject()
-        if self.terminal:
-            program = "gnome-terminal"
-            arg = ["--", "python3" , os.path.dirname(__file__) + "/" + self.chemin ]
+        if os.name == "nt":
+            terminalprogram = "cmd"
+            pythonname = "python"
         else:
-            program = "python3"
+            terminalprogram = "gnome-terminal"
+            pythonname = "python"
+        if self.terminal:
+            program = terminalprogram
+            arg = ["--", pythonname , os.path.dirname(__file__) + "/" + self.chemin ]
+        else:
+            program = pythonname
             arg = [os.path.dirname(__file__) + "/" + self.chemin]
         myProcess = QtCore.QProcess(parent)
         myProcess.start(program, arg)
