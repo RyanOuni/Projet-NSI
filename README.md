@@ -12,7 +12,7 @@ Sur Windows
 ```python
 python -m venv env
 Set-ExecutionPolicy -ExecutionPolicy Undefined -Scope CurrentUser
-source .\env\Scripts\activate
+.\env\Scripts\activate
 python -m pip install -r requirements.txt
 python main.py
 ```

@@ -18,14 +18,16 @@ class Bouton(QtWidgets.QWidget):
     def magic(self):
         parent = QtCore.QObject()
         if os.name == "nt":
-            terminalprogram = "cmd"
+            terminalprogram = "powershell"
             pythonname = "python"
+            args = ["-Command", '"python' + os.path.dirname(__file__) + "/" + self.chemin +'"']
         else:
             terminalprogram = "gnome-terminal"
             pythonname = "python"
+            args = ["--", pythonname , os.path.dirname(__file__) + "/" + self.chemin ]
         if self.terminal:
             program = terminalprogram
-            arg = ["--", pythonname , os.path.dirname(__file__) + "/" + self.chemin ]
+            arg = args
         else:
             program = pythonname
             arg = [os.path.dirname(__file__) + "/" + self.chemin]
