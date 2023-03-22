@@ -20,7 +20,7 @@ class Bouton(QtWidgets.QWidget):
         if os.name == "nt":
             terminalprogram = "powershell"
             pythonname = "python"
-            args = ["-Command", '"python' + os.path.dirname(__file__) + "/" + self.chemin +'"']
+            args = ["Start-Process", '-FilePath', 'python ' + os.path.dirname(os.path.abspath(__file__)) + "\\" + "\\".join(self.chemin.split("/"))]
         else:
             terminalprogram = "gnome-terminal"
             pythonname = "python"
