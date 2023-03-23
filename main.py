@@ -23,7 +23,7 @@ class Bouton(QtWidgets.QWidget):
             args = ["Start-Process", '-FilePath', 'python ' + os.path.dirname(os.path.abspath(__file__)) + "\\" + "\\".join(self.chemin.split("/"))]
         else:
             terminalprogram = "gnome-terminal"
-            pythonname = "python"
+            pythonname = "python3"
             args = ["--", pythonname , os.path.dirname(__file__) + "/" + self.chemin ]
         if self.terminal:
             program = terminalprogram
