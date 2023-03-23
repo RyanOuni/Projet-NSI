@@ -58,6 +58,14 @@ class MyWidget(QtWidgets.QWidget):
             {"chemin" : "labyrinthe/labyrinthe_v1.py",
              "nom" : "Générateur de labyrinthes",
              "terminal" : False
+             },
+             {"chemin" : "jeu_de_nim/Jeux de Nim.py",
+             "nom" : "Jeu de Nim",
+             "terminal" : True
+             },
+             {"chemin" : "Reversi/reversi_correction.py",
+             "nom" : "Reversi",
+             "terminal" : False
              }
             ]
         self.buttonlist = []
