@@ -32,7 +32,7 @@ class Bouton(QtWidgets.QWidget):
             program = pythonname
             arg = [os.path.dirname(__file__) + "/" + self.chemin]
         myProcess = QtCore.QProcess(parent)
-        myProcess.start(program, arg)
+        myProcess.startDetached(program, arg)
         myProcess.waitForStarted()
         myProcess.waitForFinished()
         myProcess.readAll()

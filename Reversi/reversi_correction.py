@@ -69,6 +69,8 @@ def coup_possible_direction(jeu, coup, dir):
     dx, dy = dir
     x, y = i + dx, j + dy
     lstdir = []
+    if plateau[i][j] is not None:
+        return []
     while case_appartient_plateau(jeu, (x, y)) and plateau[x][y] == autrejoueur:
         lstdir.append((x, y))
         x, y = x + dx, y + dy
